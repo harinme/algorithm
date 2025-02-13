@@ -29,9 +29,7 @@ for tc in range(1, t+1):
             count += 1
 
 
-
+    # print 방법 꼭 이해하고 넘어가기
     print(f'#{tc}')
-    for i in snail:
-        for j in snail:
-            snail[i] = ' '.join(str(j))
-        print(' '.join(str(i)))
+    for row in snail:
+        print(*row)
