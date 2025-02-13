@@ -41,4 +41,4 @@ for tc in range(1, t+1):
 
         stone += ''.join(i)
 
-    print(f'#{tc} {" ".join(stone.strip())}')
+    print(f'#{tc} {" ".join(stone)}')
