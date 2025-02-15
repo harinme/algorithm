@@ -1,5 +1,5 @@
 import sys
-sys.stdin = open('kill_fly.txt')
+sys.stdin = open('2001_kill_fly.txt')
 
 t = int(input())
 for tc in range(1, t+1):
