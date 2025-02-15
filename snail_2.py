@@ -1,4 +1,5 @@
 import sys
+from pprint import pprint
 sys.stdin = open('snail_2.txt')
 
 T = int(input())
@@ -11,6 +12,7 @@ for test_case in range(1, T + 1):
     #
     # [수정 후] 숫자 채우기를 위해 각 셀을 0으로 초기화합니다.
     matrix = [[0 for _ in range(size)] for _ in range(size)]
+    pprint(matrix)
     
     # [수정 전] 기존에는 상, 하, 좌, 우 순서로 방향 배열이 작성되어 있었음.
     # dx = [-1, 1, 0, 0]

@@ -1,4 +1,5 @@
 import sys
+from pprint import pprint
 sys.stdin = open('snail.txt')
 
 t = int(input())
@@ -7,6 +8,7 @@ for tc in range(1, t+1):
 
     size = int(input())
     snail = [[0] * size for _ in range(size)]
+    pprint(snail)
         # 우, 하, 좌, 상
     dx = [0, 1, 0,-1]
     dy = [1, 0,-1, 0]
