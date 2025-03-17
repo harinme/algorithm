@@ -1,0 +1,15 @@
+def quick_sort(arr):
+    if len(arr) <= 1:  # 배열이 1개 이하라면 정렬할 필요 없음
+        return arr
+
+    pivot = arr[len(arr) // 2]  # 중간값을 기준(Pivot)으로 설정
+    left = [x for x in arr if x < pivot]  # 기준보다 작은 값들
+    middle = [x for x in arr if x == pivot]  # 기준과 같은 값들
+    right = [x for x in arr if x > pivot]  # 기준보다 큰 값들
+
+    return quick_sort(left) + middle + quick_sort(right)  # 재귀 호출로 정렬 후 병합
+
+# 실행 예제
+arr = [3, 6, 8, 10, 1, 2, 1]
+sorted_arr = quick_sort(arr)
+print("정렬된 배열:", sorted_arr)
