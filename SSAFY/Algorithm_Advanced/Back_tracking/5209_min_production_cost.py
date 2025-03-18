@@ -10,30 +10,20 @@ def choice_factory(cnt, cost):
             min_cost = cost
         return
     
-    for i in range(len(factory)):
-        if visited_factory[i] == True:
-            continue
-        for j in range(product_num):
-            if visited[j] == True:
-                continue
-            visited[j] = True
-            visited_factory[i] = True
-            choice_factory(cnt+1, cost+factory[i][j])
-            visited[j] = False
-            visited_factory[i] = False
-            
-
+    for j in range(product_num):  # 각 제품에 대해 공장을 하나 선택
+        if not visited[j]:  # 해당 공장이 선택되지 않았다면
+            visited[j] = True  # 공장 선택
+            choice_factory(cnt + 1, cost + matrix[cnt][j])  # 다음 제품 선택
+            visited[j] = False  # 백트래킹 (원상 복구)     
 
 t = int(input())
 for tc in range(1, t+1):
     product_num = int(input())
 
     matrix = [list(map(int, input().split())) for _ in range(product_num)]
-    visited = [False] * product_num
-    visited_factory = [False] * product_num
-    factory = list(zip(*matrix))
 
     min_cost = float('inf')
+    visited = [False] * product_num
 
     choice_factory(0, 0)
 
